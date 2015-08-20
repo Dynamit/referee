@@ -13,9 +13,9 @@ Gem::Specification.new do |spec|
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Resource file generator for Objective-C.}
+  spec.description   = %q{Resource file generator for Objective-C. Parses Xcode projects and creates a .m/.h file of compile-time checked resources.}
+  spec.homepage      = "http://dynamit.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
