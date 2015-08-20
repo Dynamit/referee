@@ -38,9 +38,9 @@ module RObjc
 
       @project.resources.each do |group|
         dict[:storyboards] << group.storyboard
-        dict[:table_cells] << group.table_cells
-        dict[:collection_cells] << group.collection_cells
-        dict[:view_controllers] << group.view_controllers
+        dict[:table_cells] += group.table_cells
+        dict[:collection_cells] += group.collection_cells
+        dict[:view_controllers] += group.view_controllers
       end
 
       dict
