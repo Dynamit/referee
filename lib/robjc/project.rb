@@ -3,8 +3,17 @@ module RObjc
   # Provides accessors into resources, etc.
   class Project < ::Xcodeproj::Project
     STORYBOARD_FILETYPE = 'file.storyboard'
+    VIEW_CONTROLLER_TAGS = [ 'viewController',
+                             'tableViewController',
+                             'navigationController',
+                             'glkViewController',
+                             'pageViewController',
+                             'collectionViewController',
+                             'splitViewController',
+                             'avPlayerViewController',
+                             'tabBarController' ]
 
-    attr_accessor :config
+    attr_accessor :config, :resources
 
     # Instantiate a new `Project` instance given a `Configuration`.
     def self.new_with_config(config)
@@ -16,11 +25,33 @@ module RObjc
     end
 
     def parse_project
+      @resources = []
+
       find_storyboards.each do |storyboard|
         # Parse out XML representation.
         xml = storyboard_xml(storyboard)
-        tableCells = table_cells(xml)
+        table_cells = table_cells(xml)
+        collection_cells = collection_cells(xml)
+        view_controllers = view_controllers(xml)
+
+        # Add to resources collection
+        group = ResourceGroup.new(storyboard, table_cells, collection_cells, view_controllers)
+        @resources << group
+
+        # Check for missing view controller IDs in this storyboard.
+        no_missing = view_controllers.compact.uniq
+
+        if no_missing != view_controllers
+          msg = "Missing view controller ID in #{} storyboard!"
+          if @config.error_on_missing_storyboard_ids
+            build_output.die msg
+          else
+            build_output.warn msg
+          end
+        end
       end
+
+      puts @resources
     end
 
     private
@@ -47,7 +78,13 @@ module RObjc
     end
 
     def view_controllers(xml)
+      selector = VIEW_CONTROLLER_TAGS.join(',')
+      controllers = xml.css(selector)
+      controllers.map { |n| n["storyboardIdentifier"] }
+    end
 
+    def build_output
+      @build_output ||= BuildOutput.new(@config)
     end
   end
 end

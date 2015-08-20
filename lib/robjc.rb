@@ -14,6 +14,7 @@ require 'robjc/configuration'
 require 'robjc/codegenerator'
 require 'robjc/project'
 require 'robjc/renderable'
+require 'robjc/resourcegroup'
 require 'robjc/templaterenderer'
 require 'robjc/version'
 
