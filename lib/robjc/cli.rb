@@ -50,6 +50,11 @@ module RObjc
           puts opts
           Kernel.exit
         end
+
+        opts.on('--version', 'Display version info') do
+          puts "v#{VERSION}"
+          Kernel.exit
+        end
       end
 
       # Parse arguments and convert to `Configuration` type.
