@@ -59,3 +59,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin feature/my-new-feature`)
 6. Create a new Pull Request
+
+Note: The Rubocop adherence can always be improved!
