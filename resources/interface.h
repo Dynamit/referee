@@ -16,6 +16,7 @@
 {{# table_cells #}}
 {{{ declaration }}}
 {{/ table_cells }}
+
 @end
 
 @interface __{{ prefix }}CollectionViewCells : NSObject
