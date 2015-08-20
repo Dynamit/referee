@@ -7,10 +7,8 @@ module RObjc
     private
 
     def filepath_from_root(path)
-      # TODO: Can this be ported to an installation-method agnostic algorithm?
-      spec = ::Gem::Specification.find_by_name 'robjc'
-      gem_root = spec.gem_dir
-      File.join(gem_root, path)
+      app_dir = File.dirname(File.expand_path(__FILE__))
+      File.join(app_dir, '../..', path)
     end
 
     def template(name)

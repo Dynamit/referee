@@ -90,12 +90,13 @@ module RObjc
 
     def load_project
       build_output.info 'Parsing project resources...'
-      puts '<TODO>'
+      @project = Project::new_with_config(@config)
     end
 
     def generate_code
       build_output.info 'Generating code...'
-      puts '<TODO>'
+      @generator = CodeGenerator.new(@project, @config)
+      @generator.generate!
     end
 
     def build_output
