@@ -19,35 +19,34 @@ module RObjc
 
     def parse_args(args)
       # Build optparse instance to go through all command line parameters.
-      options = {}
+      options = { project: default_project_directory,
+                  prefix: nil,
+                  output: default_output_directory,
+                  error_on_missing_storyboard_ids: false,
+                  verbose: false }
 
       optparse = OptionParser.new do |opts|
-        options[:project] = default_project_directory
         opts.on('-x', '--xcode-project PROJECT', 'Set the Xcode project to parse') do |proj|
           options[:project] = proj
         end
 
-        options[:prefix] = nil
         opts.on('-p', '--prefix PREFIX', 'Set the class prefix for generated code') do |prefix|
           options[:prefix] = prefix
         end
 
-        options[:output] = default_output_directory
         opts.on('-o', '--output OUTPUT', 'Output generated files to this directory') do |output|
           options[:output] = output
         end
 
-        options[:error_on_missing_storyboard_ids] = false
         opts.on('-e', '--error-on-missing-ids', 'Issue errors on missing storyboard IDs') do
           options[:error_on_missing_storyboard_ids] = true
         end
 
-        options[:verbose] = false
         opts.on('-v', '--verbose', 'Enable verbose mode') do
           options[:verbose] = true
         end
 
-        opts.on( '-h', '--help', 'Display this screen' ) do
+        opts.on('-h', '--help', 'Display this screen') do
           puts opts
           Kernel.exit
         end
@@ -64,15 +63,15 @@ module RObjc
       end
 
       if !File.exist?(@config.output) || !File.writable?(@config.output)
-        build_output.die "Output directory must exist and be writable"
+        build_output.die 'Output directory must exist and be writable'
       end
 
       if !@config.project
-        build_output.die "An Xcode project is required!"
+        build_output.die 'An Xcode project is required!'
       end
 
       if !File.exist?(@config.project)
-        build_output.die "Xcode project must exist!"
+        build_output.die 'Xcode project must exist!'
       end
     end
 
@@ -95,13 +94,13 @@ module RObjc
     end
 
     def load_project
-      build_output.info "Parsing project resources..."
-      puts "<TODO>"
+      build_output.info 'Parsing project resources...'
+      puts '<TODO>'
     end
 
     def generate_code
-      build_output.info "Generating code..."
-      puts "<TODO>"
+      build_output.info 'Generating code...'
+      puts '<TODO>'
     end
 
     def build_output
