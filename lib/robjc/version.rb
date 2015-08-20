@@ -1,3 +1,4 @@
-module Robjc
-  VERSION = "0.1.0"
+# Version information.
+module RObjc
+  VERSION = '0.1.0'
 end
