@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# Launch point for robjc.
+
+$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+
+require 'robjc'
+RObjc::CLI.new(ARGV).execute
