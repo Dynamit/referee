@@ -7,7 +7,7 @@ module RObjc
 
     # Outputs an informational message.
     def info(msg)
-      puts msg if @config[:verbose]
+      puts msg if @config.verbose
     end
 
     # Outputs a message tagged as a warning for Xcode.
