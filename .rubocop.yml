@@ -2,5 +2,10 @@ AllCops:
   Exclude:
     - 'bin/*'
     - 'robjc.gemspec'
+
 Metrics/LineLength:
   Max: 120
+
+# This cop seems to produce a few false-positives.
+Style/Next:
+  Enabled: false

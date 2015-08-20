@@ -3,21 +3,21 @@ module RObjc
   # Provides accessors into resources, etc.
   class Project < ::Xcodeproj::Project
     STORYBOARD_FILETYPE = 'file.storyboard'
-    VIEW_CONTROLLER_TAGS = [ 'viewController',
-                             'tableViewController',
-                             'navigationController',
-                             'glkViewController',
-                             'pageViewController',
-                             'collectionViewController',
-                             'splitViewController',
-                             'avPlayerViewController',
-                             'tabBarController' ]
+    VIEW_CONTROLLER_TAGS = %w(viewController
+                              tableViewController
+                              navigationController
+                              glkViewController
+                              pageViewController
+                              collectionViewController
+                              splitViewController
+                              avPlayerViewController
+                              tabBarController)
 
     attr_accessor :config, :resources
 
     # Instantiate a new `Project` instance given a `Configuration`.
     def self.new_with_config(config)
-      project = self.new(config.project)
+      project = new(config.project)
       project.initialize_from_file
       project.config = config
       project.parse_project
@@ -64,28 +64,28 @@ module RObjc
 
     def storyboard_xml(storyboard)
       file = File.open(storyboard.real_path)
-      doc = Nokogiri::XML(file)
+      Nokogiri::XML(file)
     end
 
     def table_cells(xml)
-      cells = xml.css("tableViewCell")
-      cells.map { |n| n["reuseIdentifier"] }.compact.uniq
+      cells = xml.css('tableViewCell')
+      cells.map { |n| n['reuseIdentifier'] }.compact.uniq
     end
 
     def collection_cells(xml)
-      cells = xml.css("collectionViewCell")
-      cells.map { |n| n["reuseIdentifier"] }.compact.uniq
+      cells = xml.css('collectionViewCell')
+      cells.map { |n| n['reuseIdentifier'] }.compact.uniq
     end
 
     def view_controllers(xml)
       selector = VIEW_CONTROLLER_TAGS.join(',')
       controllers = xml.css(selector)
-      controllers.map { |n| n["storyboardIdentifier"] }
+      controllers.map { |n| n['storyboardIdentifier'] }
     end
 
     def segues(xml)
-      segues = xml.css("segue")
-      segues.map { |n| n["identifier"] }.compact.uniq
+      segues = xml.css('segue')
+      segues.map { |n| n['identifier'] }.compact.uniq
     end
 
     def build_output

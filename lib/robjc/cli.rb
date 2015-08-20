@@ -91,7 +91,7 @@ module RObjc
 
     def load_project
       build_output.info 'Parsing project resources...'
-      @project = Project::new_with_config(@config)
+      @project = Project.new_with_config(@config)
     end
 
     def generate_code

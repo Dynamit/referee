@@ -35,14 +35,5 @@ module RObjc
     def segues
       @segues.map { |c| Segue.new(c) }
     end
-
-    # This is provided more as a debugging tool than anything.
-    def to_s
-      %Q(Storyboard: #{storyboard_name}
-      Table Cells: #{@table_cells.count}
-      Collection Cells: #{@collection_cells.count}
-      View Controllers: #{@view_controllers.count}
-      Segues: #{@segues.count})
-    end
   end
 end

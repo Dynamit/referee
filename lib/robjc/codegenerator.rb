@@ -29,13 +29,13 @@ module RObjc
     end
 
     # Converts the resources into a Mustache-compatible template dictionary.
-    def create_dictionary_representation()
-      dict = {storyboards: [],
-              table_cells: [],
-              collection_cells: [],
-              view_controllers: [],
-              segues: [],
-              prefix: @config.prefix}
+    def create_dictionary_representation
+      dict = { storyboards: [],
+               table_cells: [],
+               collection_cells: [],
+               view_controllers: [],
+               segues: [],
+               prefix: @config.prefix }
 
       @project.resources.each do |group|
         dict[:storyboards] << group.storyboard

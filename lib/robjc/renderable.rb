@@ -22,10 +22,7 @@ module RObjc
     end
 
     def simple_method_implementation(name, body)
-      %Q(- (#{@type})#{name}
-{
-    return #{body};
-})
+      "(- (#{@type})#{name}\n{\n\treturn #{body};\n}"
     end
   end
 end
