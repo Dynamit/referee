@@ -24,10 +24,26 @@ module RObjc
 
     private
 
-    # Converts the resources into a Mustache-compatible template dictionary.
     def dictionary_representation
-      # TODO: Build this out...
-      {}
+      @dictionary_representation ||= create_dictionary_representation
+    end
+
+    # Converts the resources into a Mustache-compatible template dictionary.
+    def create_dictionary_representation()
+      dict = {storyboards: [],
+              table_cells: [],
+              collection_cells: [],
+              view_controllers: [],
+              prefix: @config.prefix}
+
+      @project.resources.each do |group|
+        dict[:storyboards] << group.storyboard
+        dict[:table_cells] << group.table_cells
+        dict[:collection_cells] << group.collection_cells
+        dict[:view_controllers] << group.view_controllers
+      end
+
+      dict
     end
 
     def resource_file(extension)

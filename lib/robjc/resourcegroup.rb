@@ -15,7 +15,23 @@ module RObjc
       basename.gsub(/\.storyboard/, '')
     end
 
-    # Provided more as a debugging tool than anything.
+    def storyboard
+      Storyboard.new(@storyboard)
+    end
+
+    def table_cells
+      @table_cells.map { |c| TableCell.new(c) }
+    end
+
+    def collection_cells
+      @collection_cells.map { |c| CollectionCell.new(c) }
+    end
+
+    def view_controllers
+      @view_controllers.map { |c| ViewController.new(c, storyboard_name) }
+    end
+
+    # This is provided more as a debugging tool than anything.
     def to_s
       %Q(Storyboard: #{storyboard_name}
       Table Cells: #{@table_cells.count}

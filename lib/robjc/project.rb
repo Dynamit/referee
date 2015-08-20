@@ -51,8 +51,6 @@ module RObjc
           end
         end
       end
-
-      puts @resources
     end
 
     private
