@@ -20,9 +20,10 @@ module RObjc
       puts "error: #{msg}"
     end
 
-    def die(msg)
+    # Outputs an error message and quits with an error status.
+    def die(msg, status=1)
       error msg
-      Kernel.exit 1
+      Kernel.exit status
     end
   end
 end
