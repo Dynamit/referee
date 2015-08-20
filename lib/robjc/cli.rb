@@ -58,21 +58,12 @@ module RObjc
     end
 
     def validate_config
-      if !@config.prefix
-        build_output.die 'Class prefix must be provided'
-      end
+      output_valid = File.exist?(@config.output) && File.writable?(@config.output)
 
-      if !File.exist?(@config.output) || !File.writable?(@config.output)
-        build_output.die 'Output directory must exist and be writable'
-      end
-
-      if !@config.project
-        build_output.die 'An Xcode project is required!'
-      end
-
-      if !File.exist?(@config.project)
-        build_output.die 'Xcode project must exist!'
-      end
+      build_output.die 'Class prefix must be provided' unless @config.prefix
+      build_output.die 'Output directory must exist and be writable' unless output_valid
+      build_output.die 'An Xcode project is required!' unless @config.project
+      build_output.die 'Xcode project must exist!' unless File.exist?(@config.project)
     end
 
     def default_project_directory
