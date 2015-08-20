@@ -21,7 +21,7 @@ module RObjc
     end
 
     # Outputs an error message and quits with an error status.
-    def die(msg, status=1)
+    def die(msg, status = 1)
       error msg
       Kernel.exit status
     end
