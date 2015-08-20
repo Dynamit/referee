@@ -1,8 +1,12 @@
+inherit_from: .rubocop_todo.yml
+
+# Files to exclude.
 AllCops:
   Exclude:
     - 'bin/*'
     - 'robjc.gemspec'
 
+# Give us... a little more room.
 Metrics/LineLength:
   Max: 120
 
