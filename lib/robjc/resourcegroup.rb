@@ -16,7 +16,7 @@ module RObjc
     end
 
     def storyboard
-      Storyboard.new(@storyboard)
+      Storyboard.new(storyboard_name)
     end
 
     def table_cells
