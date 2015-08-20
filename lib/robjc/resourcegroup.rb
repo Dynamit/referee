@@ -1,13 +1,14 @@
 module RObjc
   # Representation of all of the resources contained in a given storyboard.
   class ResourceGroup
-    attr_accessor :storyboard, :table_cells, :collection_cells, :view_controllers
+    attr_accessor :storyboard, :table_cells, :collection_cells, :view_controllers, :segues
 
-    def initialize(storyboard, table_cells, collection_cells, view_controllers)
+    def initialize(storyboard, table_cells, collection_cells, view_controllers, segues)
       @storyboard = storyboard
       @table_cells = table_cells
       @collection_cells = collection_cells
       @view_controllers = view_controllers
+      @segues = segues
     end
 
     def storyboard_name
@@ -31,12 +32,17 @@ module RObjc
       @view_controllers.map { |c| ViewController.new(c, storyboard_name) }
     end
 
+    def segues
+      @segues.map { |c| Segue.new(c) }
+    end
+
     # This is provided more as a debugging tool than anything.
     def to_s
       %Q(Storyboard: #{storyboard_name}
       Table Cells: #{@table_cells.count}
       Collection Cells: #{@collection_cells.count}
-      View Controllers: #{@view_controllers.count})
+      View Controllers: #{@view_controllers.count}
+      Segues: #{@segues.count})
     end
   end
 end

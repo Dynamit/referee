@@ -33,9 +33,10 @@ module RObjc
         table_cells = table_cells(xml)
         collection_cells = collection_cells(xml)
         view_controllers = view_controllers(xml)
+        segues = segues(xml)
 
         # Add to resources collection
-        group = ResourceGroup.new(storyboard, table_cells, collection_cells, view_controllers)
+        group = ResourceGroup.new(storyboard, table_cells, collection_cells, view_controllers, segues)
         @resources << group
 
         # Check for missing view controller IDs in this storyboard.
@@ -80,6 +81,11 @@ module RObjc
       selector = VIEW_CONTROLLER_TAGS.join(',')
       controllers = xml.css(selector)
       controllers.map { |n| n["storyboardIdentifier"] }
+    end
+
+    def segues(xml)
+      segues = xml.css("segue")
+      segues.map { |n| n["identifier"] }.compact.uniq
     end
 
     def build_output

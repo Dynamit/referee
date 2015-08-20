@@ -34,6 +34,7 @@ module RObjc
               table_cells: [],
               collection_cells: [],
               view_controllers: [],
+              segues: [],
               prefix: @config.prefix}
 
       @project.resources.each do |group|
@@ -41,6 +42,7 @@ module RObjc
         dict[:table_cells] += group.table_cells
         dict[:collection_cells] += group.collection_cells
         dict[:view_controllers] += group.view_controllers
+        dict[:segues] += group.segues
       end
 
       dict
