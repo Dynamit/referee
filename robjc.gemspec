@@ -5,7 +5,7 @@ require 'robjc/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "robjc"
-  spec.version       = Robjc::VERSION
+  spec.version       = RObjc::VERSION
   spec.authors       = ["Colin Drake"]
   spec.email         = ["colin.f.drake@gmail.com"]
 
@@ -25,4 +25,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rubocop", "~> 0.33.0"
+  spec.add_development_dependency "pry", "~> 0.10.1"
+
+  spec.add_dependency "mustache", "~> 1.0.2"
+  spec.add_dependency "nokogiri", "~> 1.6.6.2"
+  spec.add_dependency "xcodeproj", "~> 0.20.1"
 end
