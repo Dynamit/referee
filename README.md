@@ -20,9 +20,18 @@ Or install it yourself as:
 
     $ gem install robjc
 
-## Usage
+## Xcode Integration
+This script was designed to be easily integrated into your Xcode project workflow.
 
-TODO: Write usage instructions here
+Begin by adding a Run Script to your Build Phases. For the script portion, enter:
+
+    $ /your/path/to/robjc --prefix <your class prefix>
+
+_Ensure that this Run Script is moved before the Compile Sources step. Otherwise, your new changes won't get compiled!_
+
+Build the project and open your source folder. By default, at the root of that folder there should be two new files: `<Prefix>Resources.h` and `<Prefix>Resources.m`. Add these files to the Xcode project, ensuring "Copy Files" is _not_ selected.
+
+From now on, when you make changes in your Storyboard files, they will be reflected in the source files upon compiling.
 
 ## Development
 
