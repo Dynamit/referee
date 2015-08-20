@@ -11,7 +11,7 @@ module RObjc
     end
 
     def implementation
-      simple_method_implementation @identifier, @identifier
+      simple_method_implementation @identifier, "@\"#{@identifier}\""
     end
   end
 end
