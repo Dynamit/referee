@@ -2,3 +2,5 @@ AllCops:
   Exclude:
     - 'bin/*'
     - 'robjc.gemspec'
+Metrics/LineLength:
+  Max: 120
