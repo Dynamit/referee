@@ -11,6 +11,7 @@ module RObjc
     public
 
     def execute
+      build_output.info "robjc v#{VERSION} starting..."
       load_project
       generate_code
     end
