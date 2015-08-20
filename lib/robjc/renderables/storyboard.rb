@@ -11,7 +11,7 @@ module RObjc
     end
 
     def implementation
-      body = "[UIStoryboard storyboardWithName:@\"#{name}\" bundle:[NSBundle mainBundle]]"
+      body = "[UIStoryboard storyboardWithName:@\"#{@name}\" bundle:[NSBundle mainBundle]]"
       simple_method_implementation @name, body
     end
   end

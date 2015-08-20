@@ -19,7 +19,7 @@ require 'robjc/renderables/storyboard'
 require 'robjc/renderables/tablecell'
 require 'robjc/renderables/viewcontroller'
 require 'robjc/resourcegroup'
-require 'robjc/templatehelpers'
+require 'robjc/resourcetemplate'
 require 'robjc/templaterenderer'
 require 'robjc/version'
 
