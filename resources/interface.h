@@ -5,27 +5,41 @@
 
 @interface __{{ prefix }}Storyboards : NSObject
 
-{{{ storyboard_declarations }}}
+{{# storyboards #}}
+{{{ declaration }}}
+{{/ storyboards }}
+
 @end
 
 @interface __{{ prefix }}TableViewCells : NSObject
 
-{{{ tv_cell_methods }}}
+{{# table_cells #}}
+{{{ declaration }}}
+{{/ table_cells }}
 @end
 
 @interface __{{ prefix }}CollectionViewCells : NSObject
 
-{{{ cv_cell_methods }}}
+{{# collection_cells #}}
+{{{ declaration }}}
+{{/ collection_cells }}
+
 @end
 
 @interface __{{ prefix }}ViewControllers : NSObject
 
-{{{ view_controller_methods }}}
+{{# view_controllers #}}
+{{{ declaration }}}
+{{/ view_controllers }}
+
 @end
 
 @interface __{{ prefix }}Segues : NSObject
 
-{{{ segue_methods }}}
+{{# segues #}}
+{{{ declaration }}}
+{{/ segues }}
+
 @end
 
 /** Global resource reference accessor class. */
