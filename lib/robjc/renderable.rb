@@ -17,12 +17,18 @@ module RObjc
       fail 'Subclasses must implement implementation()!'
     end
 
+    def methodize_name(name)
+      name.gsub(/ |-/, '')
+    end
+
     def simple_method_declaration(name)
-      "- (#{@type})#{name};"
+      clean_name = methodize_name(name)
+      "- (#{@type})#{clean_name};"
     end
 
     def simple_method_implementation(name, body)
-      "(- (#{@type})#{name}\n{\n\treturn #{body};\n}"
+      clean_name = methodize_name(name)
+      "- (#{@type})#{clean_name}\n{\n\treturn #{body};\n}"
     end
   end
 end
