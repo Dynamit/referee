@@ -1,6 +1,6 @@
 inherit_from: .rubocop_todo.yml
 
-# Files to exclude.
+# Files to exclude - all executable dependencies from Rubygems.
 AllCops:
   Exclude:
     - 'bin/*'
