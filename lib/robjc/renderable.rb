@@ -18,7 +18,7 @@ module RObjc
     end
 
     def methodize_name(name)
-      name.gsub(/ |-/, '')
+      name.gsub(/[^a-zA-Z0-9]/, '')
     end
 
     def simple_method_declaration(name)
