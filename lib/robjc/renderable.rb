@@ -1,7 +1,7 @@
 module RObjc
   # Abstract class defining how renderable resources must behave.
   class Renderable
-    @type = nil
+    attr_accessor :type
 
     def initialize
       fail 'Abstract class Renderable may not be instantiated!'
