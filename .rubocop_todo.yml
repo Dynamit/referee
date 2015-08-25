@@ -15,23 +15,6 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Max: 32
 
-# Offense count: 11
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/AlignParameters:
-  Exclude:
-    - 'bin/bundler'
-    - 'bin/coderay'
-    - 'bin/mustache'
-    - 'bin/nokogiri'
-    - 'bin/pry'
-    - 'bin/rake'
-    - 'bin/robjc'
-    - 'bin/rubocop'
-    - 'bin/ruby-parse'
-    - 'bin/ruby-rewrite'
-    - 'bin/xcodeproj'
-
 # Offense count: 2
 # Configuration parameters: Exclude.
 Style/FileName:
