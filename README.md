@@ -73,6 +73,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Todos
 
 - Add in Image support
+- More robust method name generation
+- Homebrew distribution (?)
 
 ## Contributing
 
