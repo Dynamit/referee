@@ -43,7 +43,7 @@ module RObjc
         no_missing = view_controllers.compact.uniq
 
         if no_missing.count != view_controllers.count
-          msg = "Missing view controller ID in '#{group.storyboard_name}' storyboard!"
+          msg = "Missing view controller ID(s) in '#{group.storyboard_name}' storyboard!"
 
           if @config.error_on_missing_storyboard_ids
             build_output.die msg
