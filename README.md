@@ -1,20 +1,41 @@
-# robjc
+# RObjc
 
-`robjc` is a script that generates an Objective-C class for referencing your resources in code, providing IDE auto-complete and compile-time safety. Never ship a broken build due to flubbed magic constants again.
+## Description
+
+`RObjc` is a script that generates Objective-C classes and macros for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
 
 The currently supported resource types are:
 
 - Storyboards
 - View Controllers
-- Segues
+- Segue Identifiers
 - Table View Cell Identifiers
 - Collection View Cell Identifiers
 
 The inspiration for this script was provided by [R.swift](https://github.com/mac-cain13/R.swift).
 
+## Demo
+
+Without `RObjc`, you can either maintain your own constants file in parallel with your storyboards or write code as such:
+
+```objc
+UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+UIViewController *someViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"Some View Controller"];
+[someViewController performSegue:@"Some Segue"];
+```
+
+With `RObjc`, you can replace this with references to a few automatically generated classes:
+
+```objc
+UIViewController *someViewController = TSTResources.viewControllers.SomeViewController;
+[someViewController performSegue:TSTResources.segues.SomeSegue];
+```
+
+Now, if you change an identifier in your storyboard, your code won't compile unless it matches as well, providing you with the confidence that your code and UI are in sync.
+
 ## Installation
 
-Add this line to your application's Gemfile:
+Simpl add this line to your application's Gemfile:
 
 ```ruby
 gem 'robjc'
@@ -22,9 +43,9 @@ gem 'robjc'
 
 And then execute:
 
-    $ bundle
+    $ bundle --binstubs
 
-Or install it yourself as:
+Or install it yourself with:
 
     $ gem install robjc
 
@@ -35,11 +56,13 @@ Begin by adding a Run Script to your Build Phases. For the script portion, enter
 
     $ /your/path/to/robjc --prefix <your class prefix>
 
-_Ensure that this Run Script is moved before the Compile Sources step. Otherwise, your new changes won't get compiled!_
+_Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!_
 
 Build the project and open your source folder. By default, at the root of that folder there should be two new files: `<Prefix>Resources.h` and `<Prefix>Resources.m`. Add these files to the Xcode project, ensuring "Copy Files" is _not_ selected.
 
-From now on, when you make changes in your Storyboard files, they will be reflected in the source files upon compiling.
+From now on, when you make changes in your Storyboard files, they will be reflected in these source files upon compiling.
+
+If you need to setup different paths or configure `RObjc` further, check the `--help` flag for more information and documentation.
 
 ## Development
 
