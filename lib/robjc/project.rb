@@ -33,16 +33,15 @@ module RObjc
         table_cells = table_cells(xml)
         collection_cells = collection_cells(xml)
         view_controllers = view_controllers(xml)
+        non_empty_view_controllers = view_controllers.compact.uniq
         segues = segues(xml)
 
         # Add to resources collection
-        group = ResourceGroup.new(storyboard, table_cells, collection_cells, view_controllers, segues)
+        group = ResourceGroup.new(storyboard, table_cells, collection_cells, non_empty_view_controllers, segues)
         @resources << group
 
         # Check for missing view controller IDs in this storyboard.
-        no_missing = view_controllers.compact.uniq
-
-        if no_missing.count != view_controllers.count
+        if non_empty_view_controllers.count != view_controllers.count
           msg = "Missing view controller ID(s) in '#{group.storyboard_name}' storyboard!"
 
           if @config.error_on_missing_storyboard_ids
