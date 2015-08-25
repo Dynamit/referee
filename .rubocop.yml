@@ -4,7 +4,6 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   Exclude:
     - 'bin/*'
-    - 'robjc.gemspec'
 
 # Give us... a little more room.
 Metrics/LineLength:

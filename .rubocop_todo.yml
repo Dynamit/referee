@@ -14,35 +14,3 @@ Metrics/AbcSize:
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
   Max: 32
-
-# Offense count: 2
-# Configuration parameters: Exclude.
-Style/FileName:
-  Exclude:
-    - 'bin/ruby-parse'
-    - 'bin/ruby-rewrite'
-
-# Offense count: 1
-# Configuration parameters: EnforcedStyle, MinBodyLength, SupportedStyles.
-Style/Next:
-  Exclude:
-    - 'lib/robjc/project.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'robjc.gemspec'
-
-# Offense count: 35
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/StringLiterals:
-  Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/UnneededPercentQ:
-  Exclude:
-    - 'robjc.gemspec'
