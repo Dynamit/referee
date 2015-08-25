@@ -41,7 +41,7 @@ Simply add this line to your application's Gemfile:
 gem 'robjc'
 ```
 
-And then execute:
+And then execute the following command to install it into the `bin` folder of your application:
 
     $ bundle --binstubs
 
