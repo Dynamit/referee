@@ -13,11 +13,10 @@ module RObjc
       simple_method_declaration @name
     end
 
-    # rubocop:disable Metrics/LineLength
     def implementation
-      body = "[[UIStoryboard storyboardWithName:@\"#{@storyboard}\" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@\"#{@name}\"]"
+      body = "[[UIStoryboard storyboardWithName:@\"#{@storyboard}\" bundle:[NSBundle mainBundle]]" \
+             "instantiateViewControllerWithIdentifier:@\"#{@name}\"]"
       simple_method_implementation @name, body
     end
-    # rubocop:enable Metrics/LineLength
   end
 end
