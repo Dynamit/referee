@@ -35,7 +35,7 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 
 ## Installation
 
-Simpl add this line to your application's Gemfile:
+Simply add this line to your application's Gemfile:
 
 ```ruby
 gem 'robjc'
