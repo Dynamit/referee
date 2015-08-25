@@ -69,6 +69,7 @@ module RObjc
       build_output.die 'Output directory must exist and be writable' unless output_valid
       build_output.die 'An Xcode project is required!' unless @config.project
       build_output.die 'Xcode project must exist!' unless File.exist?(@config.project)
+      build_output.info 'Loaded and validated configuration...'
     end
 
     def default_project_directory
