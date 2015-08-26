@@ -38,7 +38,7 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 `RObjc` is distributed through [Homebrew](http://brew.sh).
 
     $ brew tap dynamit/homebrew-formulae
-    $ brew install robjc
+    $ brew install dynamit/formulae/robjc
 
 ## Xcode Integration
 This script was designed to be easily integrated into your Xcode project workflow.
