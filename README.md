@@ -35,26 +35,17 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 
 ## Installation
 
-Simply add this line to your application's Gemfile:
+`RObjc` is distributed through [Homebrew](http://brew.sh).
 
-```ruby
-gem 'robjc'
-```
-
-And then execute the following command to install it into the `bin` folder of your application:
-
-    $ bundle --binstubs
-
-Or install it yourself with:
-
-    $ gem install robjc
+    $ brew tap dynamit/homebrew-formulae
+    $ brew install robjc
 
 ## Xcode Integration
 This script was designed to be easily integrated into your Xcode project workflow.
 
 Begin by adding a Run Script to your Build Phases. For the script portion, enter:
 
-    $ /your/path/to/robjc --prefix <your class prefix>
+    $ /usr/local/bin/robjc --prefix <your class prefix>
 
 _Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!_
 
@@ -63,6 +54,12 @@ Build the project and open your source folder. By default, at the root of that f
 From now on, when you make changes in your Storyboard files, they will be reflected in these source files upon compiling.
 
 If you need to setup different paths or configure `RObjc` further, check the `--help` flag for more information and documentation.
+
+## Tips
+
+- If you install via `--binstubs`, your path to `RObjc` will be `$(SRCROOT)/bin/robjc`.
+- It is our recommendation not to check in the `<Prefix>Resources.{h,m}` files so as to avoid conflicts.
+- Check in the `Gemfile.lock` file, if installed via Bundler, to ensure that your entire team is running the same version of `RObjc`.
 
 ## Development
 
