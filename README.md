@@ -63,6 +63,7 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 - Add in Image support
 - More robust method name generation
+- NIB support
 
 ## Contributing
 
