@@ -55,23 +55,14 @@ From now on, when you make changes in your Storyboard files, they will be reflec
 
 If you need to setup different paths or configure `RObjc` further, check the `--help` flag for more information and documentation.
 
-## Tips
-
-- If you install via `--binstubs`, your path to `RObjc` will be `$(SRCROOT)/bin/robjc`.
-- It is our recommendation not to check in the `<Prefix>Resources.{h,m}` files so as to avoid conflicts.
-- Check in the `Gemfile.lock` file, if installed via Bundler, to ensure that your entire team is running the same version of `RObjc`.
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Todos
 
 - Add in Image support
 - More robust method name generation
-- Homebrew distribution (?)
 
 ## Contributing
 
