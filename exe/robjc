@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
-# Launch point for robjc.
+# Find path to our installed source code.
+require 'pathname'
+file_path = Pathname.new(__FILE__).realpath
+$LOAD_PATH.unshift(File.expand_path('../../rubylib', file_path))
 
-$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
-
+# Require main module and execute CLI.
 require 'robjc'
 RObjc::CLI.new(ARGV).execute
