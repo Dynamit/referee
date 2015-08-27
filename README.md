@@ -37,6 +37,7 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 
 `RObjc` is distributed through [Homebrew](http://brew.sh).
 
+    $ gem install xcodeproj nokogiri mustache
     $ brew tap dynamit/homebrew-formulae
     $ brew install dynamit/formulae/robjc
 
