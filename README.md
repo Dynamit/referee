@@ -35,11 +35,30 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 
 ## Installation
 
-`RObjc` is distributed through [Homebrew](http://brew.sh).
+`RObjc` is distributed through [RubyGems](https://rubygems.org/). To install it, execute the following commands:
 
-    $ gem install xcodeproj nokogiri mustache
-    $ brew tap dynamit/homebrew-formulae
-    $ brew install dynamit/formulae/robjc
+    $ gem install robjc
+
+As a reminder, if you are using [rbenv](https://github.com/sstephenson/rbenv) to manage your Gems, you may additionally need to run:
+
+    $ rbenv rehash
+
+Note that Xcode does not use your standard user `$PATH`, so we'll need to place `robjc` in a standard place that we can reference in our build scripts. `/usr/local/bin/` is a good place for this executable:
+
+    $ ln -s $(which robjc) /usr/local/bin/robjc
+
+Or if you'd rather do the above manually, here is an example using `rbenv`:
+
+    $ which robjc
+    /Users/colindrake/.rbenv/shims/robjc
+    $ ln -s /Users/colindrake/.rbenv/shims/robjc /usr/local/bin/robjc
+
+Or to do the above automatically:
+
+Finally, if you are using a `Gemfile` to manage Ruby dependencies for your app or build system, make sure to add the following:
+
+    source 'https://rubygems.org'
+    gem 'robjc'
 
 ## Xcode Integration
 This script was designed to be easily integrated into your Xcode project workflow.
