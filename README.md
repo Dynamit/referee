@@ -35,7 +35,7 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 
 ## Installation
 
-`RObjc` is distributed through [RubyGems](https://rubygems.org/). To install it, execute the following commands:
+`RObjc` is distributed through [RubyGems](https://rubygems.org/). To install it, execute the following command:
 
     $ gem install robjc
 
