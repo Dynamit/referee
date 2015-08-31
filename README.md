@@ -63,7 +63,7 @@ This script was designed to be easily integrated into your Xcode project workflo
 
 Begin by adding a Run Script to your Build Phases. For the script portion, enter:
 
-    $ /usr/local/bin/robjc --prefix <your class prefix>
+    /usr/local/bin/robjc --prefix <your class prefix>
 
 _Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!_
 
