@@ -3,9 +3,6 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'robjc/version'
 
-robjc_spec = Gem::Specification.find_by_name('robjc')
-robjc_gem_root = robjc_spec.gem_dir
-
 Gem::Specification.new do |spec|
   spec.name          = 'robjc'
   spec.version       = RObjc::VERSION
@@ -27,10 +24,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rubocop', '~> 0.33.0'
   spec.add_development_dependency 'pry', '~> 0.10.1'
+  spec.add_development_dependency 'rubygems-tasks', '~> 0.2.4'
 
   spec.add_dependency 'xcodeproj', '~> 0.20.1'
   spec.add_runtime_dependency 'mustache', '~> 1.0', '>= 1.0.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
-  post_install { `ln -s /usr/local/bin/robjc #{robjc_gem_root}/bin/robjc` }
-  post_uninstall { `rm /usr/local/bin/robjc` }
 end
