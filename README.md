@@ -83,6 +83,11 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 - [ ] More robust method name generation
 - [ ] NIB support
 
+## Caveats
+
+A word of caution; Using `RObjc` on your project can make your project's binary size balloon. This is a consequence of what `RObjc` does for you - it creates convenience classes for you, thus increasing your symbols etc. On most smaller projects, this won't matter. On large ones, however, please be cautious.
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/dynamit/robjc/fork )
