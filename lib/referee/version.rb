@@ -1,4 +1,4 @@
 # Version information.
-module RObjc
+module Referee
   VERSION = '0.1.0'
 end

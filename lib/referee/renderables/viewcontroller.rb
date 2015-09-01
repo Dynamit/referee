@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Renderable implementation for UIViewControllers embedded in storyboards.
   class ViewController < Renderable
     attr_accessor :name, :storyboard

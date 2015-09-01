@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Representation of all of the resources contained in a given storyboard.
   class ResourceGroup
     attr_accessor :storyboard, :table_cells, :collection_cells, :view_controllers, :segues

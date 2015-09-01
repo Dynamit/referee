@@ -1,8 +1,8 @@
-# RObjc
+# Referee
 
-[![Build Status](https://travis-ci.org/Dynamit/robjc.svg?branch=master)](https://travis-ci.org/Dynamit/robjc)
+[![Build Status](https://travis-ci.org/Dynamit/referee.svg?branch=master)](https://travis-ci.org/Dynamit/referee)
 
-`RObjc` is a script that generates Objective-C classes and macros for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
+Referee is a script that generates Objective-C classes and macros for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
 
 The currently supported resource types are:
 
@@ -16,7 +16,7 @@ The inspiration for this script was provided by [R.swift](https://github.com/mac
 
 ## Demo
 
-Without `RObjc`, you can either maintain your own constants file in parallel with your storyboards or write code as such:
+Without `referee`, you can either maintain your own constants file in parallel with your storyboards or write code as such:
 
 ```objc
 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
@@ -24,7 +24,7 @@ UIViewController *someViewController = [mainStoryboard instantiateViewController
 [someViewController performSegue:@"Some Segue"];
 ```
 
-With `RObjc`, you can replace this with references to a few automatically generated classes:
+With `referee`, you can replace this with references to a few automatically generated classes:
 
 ```objc
 UIViewController *someViewController = TSTResources.viewControllers.SomeViewController;
@@ -35,35 +35,35 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 
 ## Installation
 
-`RObjc` is distributed through [RubyGems](https://rubygems.org/). To install it, execute the following command:
+`referee` is distributed through [RubyGems](https://rubygems.org/). To install it, execute the following command:
 
-    $ gem install robjc
+    $ gem install referee
 
 As a reminder, if you are using [rbenv](https://github.com/sstephenson/rbenv) to manage your Gems, you may additionally need to run:
 
     $ rbenv rehash
 
-Note that Xcode does not use your standard user `$PATH`, so we'll need to place `robjc` in a standard place that we can reference in our build scripts. `/usr/local/bin/` is a good place for this executable:
+Note that Xcode does not use your standard user `$PATH`, so we'll need to place `referee` in a standard place that we can reference in our build scripts. `/usr/local/bin/` is a good place for this executable:
 
-    $ ln -s $(which robjc) /usr/local/bin/robjc
+    $ ln -s $(which referee) /usr/local/bin/referee
 
 Or if you'd rather do the above manually, here is an example using `rbenv`:
 
-    $ which robjc
-    /Users/colindrake/.rbenv/shims/robjc
-    $ ln -s /Users/colindrake/.rbenv/shims/robjc /usr/local/bin/robjc
+    $ which referee
+    /Users/colindrake/.rbenv/shims/referee
+    $ ln -s /Users/colindrake/.rbenv/shims/referee /usr/local/bin/referee
 
 Finally, if you are using a `Gemfile` to manage Ruby dependencies for your app or build system, make sure to add the following:
 
     source 'https://rubygems.org'
-    gem 'robjc'
+    gem 'referee'
 
 ## Xcode Integration
 This script was designed to be easily integrated into your Xcode project workflow.
 
 Begin by adding a Run Script to your Build Phases. For the script portion, enter:
 
-    /usr/local/bin/robjc --prefix <your class prefix>
+    /usr/local/bin/referee --prefix <your class prefix>
 
 _**Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!**_
 
@@ -71,7 +71,7 @@ Build the project and open your source folder. By default, at the root of that f
 
 From now on, when you make changes in your Storyboard files, they will be reflected in these source files upon compiling.
 
-If you need to setup different paths or configure `RObjc` further, check the `--help` flag for more information and documentation.
+If you need to setup different paths or configure `referee` further, check the `--help` flag for more information and documentation.
 
 ## Development
 
@@ -85,11 +85,11 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 ## Caveats
 
-A word of caution; Using `RObjc` on your project can make your project's binary size balloon. This is a consequence of what `RObjc` does for you - it creates convenience classes for you, thus increasing your symbols etc. On most smaller projects, this won't matter. On large ones, however, please be cautious.
+A word of caution; Using Referee on your project can make your project's binary size balloon. This is a consequence of what Referee does for you - it creates convenience classes for you, thus increasing your symbols etc. On most smaller projects, this won't matter. On large ones, however, please be cautious.
 
 ## Contributing
 
-1. Fork it ( https://github.com/dynamit/robjc/fork )
+1. Fork it ( https://github.com/dynamit/referee/fork )
 2. Create your feature branch (`git checkout -b feature/my-new-feature`)
 3. Ensure you adhere to the style guidelines (run `rubocop`)
 4. Commit your changes (`git commit -am 'Add some feature'`)

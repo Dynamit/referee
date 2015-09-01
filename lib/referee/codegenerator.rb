@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Code generation module. Outputs to a .h/.m file specified by configuration.
   class CodeGenerator
     def initialize(project, config)

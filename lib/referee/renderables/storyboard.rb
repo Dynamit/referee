@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Renderable implementation for UIStoryboards in a project.
   class Storyboard < Renderable
     def initialize(name)

@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby
-require 'robjc'
-RObjc::CLI.new(ARGV).execute

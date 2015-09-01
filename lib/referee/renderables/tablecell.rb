@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Renderable implementation for UITableViewCell identifiers embedded in storyboards.
   class TableCell < Renderable
     def initialize(identifier)

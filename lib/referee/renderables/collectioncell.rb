@@ -1,6 +1,6 @@
-module RObjc
-  # Renderable implementation for segue identifiers embedded in storyboards.
-  class Segue < Renderable
+module Referee
+  # Renderable implementation for UICollectionViewCell identifiers embedded in storyboards.
+  class CollectionCell < Renderable
     def initialize(identifier)
       @identifier = identifier
       @type = 'NSString *'

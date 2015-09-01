@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'referee'
+Referee::CLI.new(ARGV).execute

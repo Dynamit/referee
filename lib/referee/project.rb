@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Helper subclass of `Xcode::Project`.
   # Provides accessors into resources, etc.
   class Project < ::Xcodeproj::Project

@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Command line interface.
   # Thanks to http://pewpewthespells.com/blog/buildsettings.html for the list
   # of valid Xcode build variables.
@@ -11,7 +11,7 @@ module RObjc
     public
 
     def execute
-      build_output.info "robjc v#{VERSION} starting..."
+      build_output.info "referee v#{VERSION} starting..."
       load_project
       generate_code
     end

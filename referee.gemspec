@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'robjc/version'
+require 'referee/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'robjc'
-  spec.version       = RObjc::VERSION
+  spec.name          = 'referee'
+  spec.version       = Referee::VERSION
   spec.authors       = ['Colin Drake']
   spec.email         = ['colin.f.drake@gmail.com']
 

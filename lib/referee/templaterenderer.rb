@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Manages finding and rendering code templates to strings.
   class TemplateRenderer
     INTERFACE_TEMPLATE_NAME = 'interface.h'

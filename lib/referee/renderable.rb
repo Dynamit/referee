@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Abstract class defining how renderable resources must behave.
   class Renderable
     attr_accessor :type

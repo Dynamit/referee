@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in robjc.gemspec
+# Specify your gem's dependencies in referee.gemspec
 gemspec

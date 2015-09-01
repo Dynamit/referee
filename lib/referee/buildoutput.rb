@@ -1,4 +1,4 @@
-module RObjc
+module Referee
   # Class providing an Xcode-parseable output mechanism.
   class BuildOutput
     def initialize(config)
