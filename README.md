@@ -84,6 +84,8 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 - [ ] Add in Image support
 - [ ] More robust method name generation
 - [ ] NIB support
+- [ ] Localized Strings?
+- [ ] Per-category toggle flags, i.e. something to the effect of `--table-cells=NO`
 
 ## Caveats
 
