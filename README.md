@@ -87,7 +87,7 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 ## Caveats
 
-A word of caution; Using Referee on your project can make your project's binary size balloon. This is a consequence of what Referee does for you - it creates convenience classes for you, thus increasing your symbols etc. On most smaller projects, this won't matter. On large ones, however, please be cautious.
+A word of caution: using Referee on your project can make your project's binary size balloon. This is a consequence of what Referee does for you - it creates convenience classes for you, thus increasing your symbol count. On most smaller projects, this won't matter. On large ones, however, please be cautious.
 
 ## Contributing
 
