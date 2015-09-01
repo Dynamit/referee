@@ -1,8 +1,6 @@
 # Referee
 
-[![Build Status](https://travis-ci.org/Dynamit/referee.svg?branch=master)](https://travis-ci.org/Dynamit/referee)
-
-[![Gem Version](https://badge.fury.io/rb/objc-referee.svg)](http://badge.fury.io/rb/objc-referee)
+[![Build Status](https://travis-ci.org/Dynamit/referee.svg?branch=master)](https://travis-ci.org/Dynamit/referee) [![Gem Version](https://badge.fury.io/rb/objc-referee.svg)](http://badge.fury.io/rb/objc-referee)
 
 Referee is a script that generates Objective-C classes and macros for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
 
