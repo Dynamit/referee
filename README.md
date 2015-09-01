@@ -1,5 +1,7 @@
 # RObjc
 
+[![Build Status](https://travis-ci.org/Dynamit/robjc.svg?branch=master)](https://travis-ci.org/Dynamit/robjc)
+
 `RObjc` is a script that generates Objective-C classes and macros for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
 
 The currently supported resource types are:
