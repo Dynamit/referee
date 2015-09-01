@@ -65,7 +65,7 @@ Begin by adding a Run Script to your Build Phases. For the script portion, enter
 
     /usr/local/bin/robjc --prefix <your class prefix>
 
-_Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!_
+_**Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!**_
 
 Build the project and open your source folder. By default, at the root of that folder there should be two new files: `<Prefix>Resources.h` and `<Prefix>Resources.m`. Add these files to the Xcode project, ensuring "Copy Files" is _not_ selected.
 
