@@ -65,7 +65,7 @@ Begin by adding a Run Script to your Build Phases. For the script portion, enter
 
     /usr/local/bin/robjc --prefix <your class prefix>
 
-_Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!_
+_**Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!**_
 
 Build the project and open your source folder. By default, at the root of that folder there should be two new files: `<Prefix>Resources.h` and `<Prefix>Resources.m`. Add these files to the Xcode project, ensuring "Copy Files" is _not_ selected.
 
@@ -82,6 +82,11 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 - [ ] Add in Image support
 - [ ] More robust method name generation
 - [ ] NIB support
+
+## Caveats
+
+A word of caution; Using `RObjc` on your project can make your project's binary size balloon. This is a consequence of what `RObjc` does for you - it creates convenience classes for you, thus increasing your symbols etc. On most smaller projects, this won't matter. On large ones, however, please be cautious.
+
 
 ## Contributing
 
