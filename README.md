@@ -97,7 +97,7 @@ A word of caution; Using `RObjc` on your project can make your project's binary 
 5. Push to the branch (`git push origin feature/my-new-feature`)
 6. Create a new Pull Request
 
-Note: The Rubocop adherence can always be improved!
+Note: The [Rubocop](https://github.com/bbatsov/rubocop) adherence can always be improved! Please see `.rubocop_todo.yml` for areas that need improvement.
 
 ## License
 
