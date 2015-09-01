@@ -37,7 +37,7 @@ Now, if you change an identifier in your storyboard, your code won't compile unl
 
 `referee` is distributed through [RubyGems](https://rubygems.org/). To install it, execute the following command:
 
-    $ gem install referee
+    $ gem install objc-referee
 
 As a reminder, if you are using [rbenv](https://github.com/sstephenson/rbenv) to manage your Gems, you may additionally need to run:
 

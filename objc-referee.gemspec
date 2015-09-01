@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'referee/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'referee'
+  spec.name          = 'objc-referee'
   spec.version       = Referee::VERSION
   spec.authors       = ['Colin Drake']
   spec.email         = ['colin.f.drake@gmail.com']
