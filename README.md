@@ -97,3 +97,8 @@ Note: The Rubocop adherence can always be improved!
 ## License
 
 This project is MIT licensed. Please see `LICENSE.txt` for details.
+
+## Sponsorship
+
+This project is sponsored by the iOS Mobile group at [Dynamit LLC](http://dynamit.com).
+
