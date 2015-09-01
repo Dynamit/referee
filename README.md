@@ -93,3 +93,7 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 6. Create a new Pull Request
 
 Note: The Rubocop adherence can always be improved!
+
+## License
+
+This project is MIT licensed. Please see `LICENSE.txt` for details.
