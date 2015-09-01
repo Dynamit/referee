@@ -1,7 +1,5 @@
 # RObjc
 
-## Description
-
 `RObjc` is a script that generates Objective-C classes and macros for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
 
 The currently supported resource types are:
@@ -106,4 +104,3 @@ This project is MIT licensed. Please see `LICENSE.txt` for details.
 ## Sponsorship
 
 This project is sponsored by the iOS Mobile group at [Dynamit LLC](http://dynamit.com).
-
