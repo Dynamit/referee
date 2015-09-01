@@ -56,7 +56,7 @@ Or if you'd rather do the above manually, here is an example using `rbenv`:
 Finally, if you are using a `Gemfile` to manage Ruby dependencies for your app or build system, make sure to add the following:
 
     source 'https://rubygems.org'
-    gem 'referee'
+    gem 'objc-referee'
 
 ## Xcode Integration
 This script was designed to be easily integrated into your Xcode project workflow.
