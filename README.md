@@ -79,9 +79,9 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 ## Todos
 
-[ ] Add in Image support
-[ ] More robust method name generation
-[ ] NIB support
+- [ ] Add in Image support
+- [ ] More robust method name generation
+- [ ] NIB support
 
 ## Contributing
 
