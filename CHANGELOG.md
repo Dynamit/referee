@@ -5,4 +5,4 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 ## [0.1.1] - 2015-09-02
 Initial public release.
 
-[0.1.1]: https://github.com/dynamit/referee/v0.1.1
+[0.1.1]: https://github.com/Dynamit/referee/tree/0.1.1
