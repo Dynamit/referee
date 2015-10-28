@@ -21,7 +21,8 @@ module Referee
     end
 
     def swift_implementation
-      body = "UIStoryboard(name: \"#{@name}\", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier(\"#{@name}\")"
+      body = "UIStoryboard(name: \"#{@name}\", bundle: NSBundle.mainBundle())." \
+             "instantiateViewControllerWithIdentifier(\"#{@name}\")"
       simple_swift_method @name, body
     end
   end

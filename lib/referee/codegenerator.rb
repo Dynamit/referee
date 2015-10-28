@@ -9,7 +9,7 @@ module Referee
     public
 
     def generate!
-      if @config.language == 'objc' then
+      if @config.language == 'objc'
         generate_objc!
       else
         generate_swift!
@@ -68,7 +68,7 @@ module Referee
     end
 
     def resource_file(extension)
-      if @config.language == 'objc' then
+      if @config.language == 'objc'
         filename = "#{@config.prefix}Resources.#{extension}"
         File.join(@config.output, filename)
       else

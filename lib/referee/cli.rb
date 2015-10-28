@@ -71,12 +71,12 @@ module Referee
     def validate_config
       is_swift = (@config.language == 'swift')
       output_valid = File.exist?(@config.output) && File.writable?(@config.output)
-      build_output.die 'Class prefix must be provided' unless (is_swift || @config.prefix)
-      build_output.info 'Class prefix will ignored...' if (is_swift && @config.prefix)
+      build_output.die 'Class prefix must be provided' unless is_swift || @config.prefix
+      build_output.info 'Class prefix will ignored...' if is_swift && @config.prefix
       build_output.die 'Output directory must exist and be writable' unless output_valid
       build_output.die 'An Xcode project is required!' unless @config.project
       build_output.die 'Xcode project must exist!' unless File.exist?(@config.project)
-      build_output.die 'Invalid language specified!' unless ['swift', 'objc'].index(@config.language)
+      build_output.die 'Invalid language specified!' unless %w(swift objc).index(@config.language)
       build_output.info 'Loaded and validated configuration...'
     end
 
