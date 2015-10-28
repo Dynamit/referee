@@ -7,6 +7,7 @@ module Referee
       @name = name
       @storyboard = storyboard
       @type = 'UIViewController *'
+      @swift_type = 'UIViewController'
     end
 
     def declaration
@@ -17,6 +18,11 @@ module Referee
       body = "[[UIStoryboard storyboardWithName:@\"#{@storyboard}\" bundle:[NSBundle mainBundle]] " \
              "instantiateViewControllerWithIdentifier:@\"#{@name}\"]"
       simple_method_implementation @name, body
+    end
+
+    def swift_implementation
+      body = "UIStoryboard(name: \"#{@name}\", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier(\"#{@name}\")"
+      simple_swift_method @name, body
     end
   end
 end

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Dynamit/referee.svg?branch=master)](https://travis-ci.org/Dynamit/referee) [![Gem Version](https://badge.fury.io/rb/objc-referee.svg)](http://badge.fury.io/rb/objc-referee)
 
-Referee is a script that generates Objective-C classes and macros for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
+Referee is a script that generates Objective-C or Swift objects for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
 
 The currently supported resource types are:
 
@@ -29,6 +29,13 @@ With `referee`, you can replace this with references to a few automatically gene
 ```objc
 UIViewController *someViewController = TSTResources.viewControllers.SomeViewController;
 [someViewController performSegue:TSTResources.segues.SomeSegue];
+```
+
+Using Swift, this code will look like:
+
+```swift
+let someViewController = Resources.ViewControllers.SomeViewController()
+someViewController.performSegue(Resources.Segues.SomeSegue)
 ```
 
 Now, if you change an identifier in your storyboard, your code won't compile unless it matches as well, providing you with the confidence that your code and UI are in sync.
@@ -61,13 +68,14 @@ Finally, if you are using a `Gemfile` to manage Ruby dependencies for your app o
 ## Xcode Integration
 This script was designed to be easily integrated into your Xcode project workflow.
 
-Begin by adding a Run Script to your Build Phases. For the script portion, enter:
+Begin by adding a Run Script to your Build Phases. For the script portion, enter one of the following:
 
-    /usr/local/bin/referee --prefix <your class prefix>
+    /usr/local/bin/referee --prefix <your class prefix>   # for Objective-C
+    /usr/local/bin/referee --language swift               # for Swift
 
 _**Ensure that this Run Script runs before the Compile Sources step. Otherwise, your new changes won't get compiled!**_
 
-Build the project and open your source folder. By default, at the root of that folder there should be two new files: `<Prefix>Resources.h` and `<Prefix>Resources.m`. Add these files to the Xcode project, ensuring "Copy Files" is _not_ selected.
+Build the project and open your source folder. When using Objective-C, there should be two new files at the root of that folder: `<Prefix>Resources.h` and `<Prefix>Resources.m`. Add these files to the Xcode project, ensuring "Copy Files" is _not_ selected. When using Swift, a single file called `Resources.swift` will be generated. Follow the same steps to add the files to Xcode.
 
 From now on, when you make changes in your Storyboard files, they will be reflected in these source files upon compiling.
 

@@ -9,6 +9,16 @@ module Referee
     public
 
     def generate!
+      if @config.language == 'objc' then
+        generate_objc!
+      else
+        generate_swift!
+      end
+    end
+
+    private
+
+    def generate_objc!
       # Substitute out template information.
       iface = renderer.render_interface(dictionary_representation)
       impl = renderer.render_implementation(dictionary_representation)
@@ -22,7 +32,16 @@ module Referee
       File.write(implementation_path, impl)
     end
 
-    private
+    def generate_swift!
+      # Substitute out template information.
+      swift_impl = renderer.render_swift_implementation(dictionary_representation)
+
+      # Generate path.
+      file_path = resource_file('swift')
+
+      # Write to file.
+      File.write(file_path, swift_impl)
+    end
 
     def dictionary_representation
       @dictionary_representation ||= create_dictionary_representation
@@ -49,8 +68,13 @@ module Referee
     end
 
     def resource_file(extension)
-      filename = "#{@config.prefix}Resources.#{extension}"
-      File.join(@config.output, filename)
+      if @config.language == 'objc' then
+        filename = "#{@config.prefix}Resources.#{extension}"
+        File.join(@config.output, filename)
+      else
+        filename = "Resources.#{extension}"
+        File.join(@config.output, filename)
+      end
     end
 
     def renderer

@@ -4,6 +4,7 @@ module Referee
     def initialize(name)
       @name = name
       @type = 'UIStoryboard *'
+      @swift_type = 'UIStoryboard'
     end
 
     def declaration
@@ -13,6 +14,11 @@ module Referee
     def implementation
       body = "[UIStoryboard storyboardWithName:@\"#{@name}\" bundle:[NSBundle mainBundle]]"
       simple_method_implementation @name, body
+    end
+
+    def swift_implementation
+      body = "UIStoryboard(name: \"#{@name}\", bundle: NSBundle.mainBundle())"
+      simple_swift_method @name, body
     end
   end
 end

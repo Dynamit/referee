@@ -4,6 +4,7 @@ module Referee
     def initialize(identifier)
       @identifier = identifier
       @type = 'NSString *'
+      @swift_type = 'String'
     end
 
     def declaration
@@ -12,6 +13,10 @@ module Referee
 
     def implementation
       simple_method_implementation @identifier, "@\"#{@identifier}\""
+    end
+
+    def swift_implementation
+      simple_swift_string_case @identifier
     end
   end
 end

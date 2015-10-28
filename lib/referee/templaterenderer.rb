@@ -3,6 +3,7 @@ module Referee
   class TemplateRenderer
     INTERFACE_TEMPLATE_NAME = 'interface.h'
     IMPLEMENTATION_TEMPLATE_NAME = 'implementation.m'
+    SWIFT_TEMPLATE_NAME = 'default.swift'
 
     private
 
@@ -27,6 +28,11 @@ module Referee
     # Renders the interface (.h) file as a string.
     def render_interface(dict)
       template(INTERFACE_TEMPLATE_NAME).call(dict)
+    end
+
+    # Renders the Swift implementation file as a string.
+    def render_swift_implementation(dict)
+      template(SWIFT_TEMPLATE_NAME).call(dict)
     end
   end
 end
