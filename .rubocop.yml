@@ -7,7 +7,7 @@ AllCops:
 
 # Give us... a little more room.
 Metrics/LineLength:
-  Max: 120
+  Max: 140
 
 # This cop seems to produce a few false-positives.
 Style/Next:

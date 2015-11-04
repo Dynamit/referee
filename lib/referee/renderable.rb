@@ -23,13 +23,19 @@ module Referee
     end
 
     def bundle_accessor(bundle_id)
-      (bundle_id ? "[NSBundle bundleWithIdentifier:\"#{bundle_id}\"]" :
-                   "[NSBundle mainBundle]")
+      if bundle_id
+        "[NSBundle bundleWithIdentifier:\"#{bundle_id}\"]"
+      else
+        '[NSBundle mainBundle]'
+      end
     end
 
     def swift_bundle_accessor(bundle_id)
-      (bundle_id ? "NSBundle(identifier: \"#{bundle_id}\")" :
-                   "NSBundle.mainBundle()")
+      if bundle_id
+        "NSBundle(identifier: \"#{bundle_id}\")"
+      else
+        'NSBundle.mainBundle()'
+      end
     end
 
     def methodize_name(name)
