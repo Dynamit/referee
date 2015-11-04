@@ -8,7 +8,8 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 - Adds in Swift code generation via `--language swift`. To keep compatibility with older versions, the default is still `objc`. Swift code generation will output a file `Resources.swift`.
 - An autogeneration warning has been added to the output files. Notes that changes to the given files will eventually be lost.
 - Ability to specify the `NSBundle` the resources should be accessed from. Handy for developing frameworks with resources.
-  - By default (if no bundle is specified) the main bundle will be used. The `--bundle-id` flag can set a custom bundle ID.
+  - By default (if no bundle is specified) the main bundle will be used.
+  - The `--bundle-id` flag can set a custom bundle ID.
 
 ## [0.1.1] - 2015-09-02
 Initial public release.
