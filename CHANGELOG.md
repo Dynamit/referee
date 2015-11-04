@@ -18,5 +18,5 @@ Coming soon.
 Initial public release.
 
 [unreleased]: https://github.com/dynamit/referee/compare/0.2.0...HEAD
-[0.2.0]: https://github.com/dynamit/referee/compare/0.1.1...0.2.0
+[0.2.0]: https://github.com/dynamit/referee/tree/0.2.0
 [0.1.1]: https://github.com/Dynamit/referee/tree/0.1.1
