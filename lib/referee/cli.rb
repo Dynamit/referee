@@ -25,6 +25,7 @@ module Referee
                   output: default_output_directory,
                   error_on_missing_storyboard_ids: false,
                   language: 'objc',
+                  bundle_id: nil,
                   verbose: false }
 
       optparse = OptionParser.new do |opts|
@@ -48,6 +49,10 @@ module Referee
           options[:language] = language.downcase
         end
 
+        opts.on('-b', '--bundle-id IDENTIFIER', 'Set the bundle identifier in the generated code (Main bundle by default)') do |bundle_id|
+          options[:bundle_id] = bundle_id
+        end
+
         opts.on('-v', '--verbose', 'Enable verbose mode') do
           options[:verbose] = true
         end
@@ -68,6 +73,13 @@ module Referee
       Configuration.new(options)
     end
 
+    def validate_bundle_id(bundle_id)
+      # Note: `nil` bundle ID will indicate main bundle default.
+      # We'll accept nil or a "<something>.<something>..." format.
+      bundle_regex = /[a-zA-Z0-9]+(\.[a-zA-Z0-9])+/
+      (!bundle_id || bundle_id.match(bundle_regex))
+    end
+
     def validate_config
       is_swift = (@config.language == 'swift')
       output_valid = File.exist?(@config.output) && File.writable?(@config.output)
@@ -77,6 +89,7 @@ module Referee
       build_output.die 'An Xcode project is required!' unless @config.project
       build_output.die 'Xcode project must exist!' unless File.exist?(@config.project)
       build_output.die 'Invalid language specified!' unless %w(swift objc).index(@config.language)
+      build_output.die 'Invalid bundle identifier' unless validate_bundle_id(@config.bundle_id)
       build_output.info 'Loaded and validated configuration...'
     end
 

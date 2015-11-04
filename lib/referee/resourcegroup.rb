@@ -1,14 +1,15 @@
 module Referee
   # Representation of all of the resources contained in a given storyboard.
   class ResourceGroup
-    attr_accessor :storyboard, :table_cells, :collection_cells, :view_controllers, :segues
+    attr_accessor :storyboard, :table_cells, :collection_cells, :view_controllers, :segues, :config
 
-    def initialize(storyboard, table_cells, collection_cells, view_controllers, segues)
+    def initialize(storyboard, table_cells, collection_cells, view_controllers, segues, config)
       @storyboard = storyboard
       @table_cells = table_cells
       @collection_cells = collection_cells
       @view_controllers = view_controllers
       @segues = segues
+      @config = config
     end
 
     def storyboard_name
@@ -17,7 +18,7 @@ module Referee
     end
 
     def storyboard
-      Storyboard.new(storyboard_name)
+      Storyboard.new(storyboard_name, @config)
     end
 
     def table_cells
@@ -29,7 +30,7 @@ module Referee
     end
 
     def view_controllers
-      @view_controllers.map { |c| ViewController.new(c, storyboard_name) }
+      @view_controllers.map { |c| ViewController.new(c, storyboard_name, @config) }
     end
 
     def segues

@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 - Ensures Gemspec has a minimum Ruby version. Choosing 2.x, as this is default on Yosemite machines.
 - Adds in Swift code generation via `--language swift`. To keep compatibility with older versions, the default is still `objc`. Swift code generation will output a file `Resources.swift`.
 - An autogeneration warning has been added to the output files. Notes that changes to the given files will eventually be lost.
+- Ability to specify the `NSBundle` the resources should be accessed from. Handy for developing frameworks with resources.
+  - By default (if no bundle is specified) the main bundle will be used. The `--bundle-id` flag can set a custom bundle ID.
 
 ## [0.1.1] - 2015-09-02
 Initial public release.

@@ -1,13 +1,14 @@
 module Referee
   # Renderable implementation for UIViewControllers embedded in storyboards.
   class ViewController < Renderable
-    attr_accessor :name, :storyboard
+    attr_accessor :name, :storyboard, :config
 
-    def initialize(name, storyboard)
+    def initialize(name, storyboard, config)
       @name = name
       @storyboard = storyboard
       @type = 'UIViewController *'
       @swift_type = 'UIViewController'
+      @config = config
     end
 
     def declaration
@@ -15,13 +16,15 @@ module Referee
     end
 
     def implementation
-      body = "[[UIStoryboard storyboardWithName:@\"#{@storyboard}\" bundle:[NSBundle mainBundle]] " \
+      bundle = bundle_accessor(@config.bundle_id)
+      body = "[[UIStoryboard storyboardWithName:@\"#{@storyboard}\" bundle:#{bundle}] " \
              "instantiateViewControllerWithIdentifier:@\"#{@name}\"]"
       simple_method_implementation @name, body
     end
 
     def swift_implementation
-      body = "UIStoryboard(name: \"#{@name}\", bundle: NSBundle.mainBundle())." \
+      bundle = swift_bundle_accessor(@config.bundle_id)
+      body = "UIStoryboard(name: \"#{@name}\", bundle: #{bundle})." \
              "instantiateViewControllerWithIdentifier(\"#{@name}\")"
       simple_swift_method @name, body
     end

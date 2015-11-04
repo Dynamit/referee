@@ -22,6 +22,16 @@ module Referee
       fail 'Subclasses must implement swift_implementation()!'
     end
 
+    def bundle_accessor(bundle_id)
+      (bundle_id ? "[NSBundle bundleWithIdentifier:\"#{bundle_id}\"]" :
+                   "[NSBundle mainBundle]")
+    end
+
+    def swift_bundle_accessor(bundle_id)
+      (bundle_id ? "NSBundle(identifier: \"#{bundle_id}\")" :
+                   "NSBundle.mainBundle()")
+    end
+
     def methodize_name(name)
       name.gsub(/[^a-zA-Z0-9]/, '')
     end

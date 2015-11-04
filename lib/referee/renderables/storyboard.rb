@@ -1,10 +1,13 @@
 module Referee
   # Renderable implementation for UIStoryboards in a project.
   class Storyboard < Renderable
-    def initialize(name)
+    attr_accessor :name, :config
+
+    def initialize(name, config)
       @name = name
       @type = 'UIStoryboard *'
       @swift_type = 'UIStoryboard'
+      @config = config
     end
 
     def declaration
@@ -12,12 +15,14 @@ module Referee
     end
 
     def implementation
-      body = "[UIStoryboard storyboardWithName:@\"#{@name}\" bundle:[NSBundle mainBundle]]"
+      bundle = bundle_accessor(@config.bundle_id)
+      body = "[UIStoryboard storyboardWithName:@\"#{@name}\" bundle:#{bundle}]"
       simple_method_implementation @name, body
     end
 
     def swift_implementation
-      body = "UIStoryboard(name: \"#{@name}\", bundle: NSBundle.mainBundle())"
+      bundle = swift_bundle_accessor(@config.bundle_id)
+      body = "UIStoryboard(name: \"#{@name}\", bundle: #{bundle})"
       simple_swift_method @name, body
     end
   end

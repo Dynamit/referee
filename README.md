@@ -81,6 +81,11 @@ From now on, when you make changes in your Storyboard files, they will be reflec
 
 If you need to setup different paths or configure `referee` further, check the `--help` flag for more information and documentation.
 
+## Custom Frameworks
+It is possible to generate resource accessors for a custom `.framework` with embedded resources simply by switching the generated code's accessed Bundle.
+
+By default, all resources will be accessed from the Main Bundle, however, the `--bundle-id com.example.bundle-id` flag allows setting a custom Bundle Identifier. This allows you to access resources inside of a custom, third-party framework.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
