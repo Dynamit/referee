@@ -76,7 +76,7 @@ module Referee
     def validate_bundle_id(bundle_id)
       # Note: `nil` bundle ID will indicate main bundle default.
       # We'll accept nil or a "<something>.<something>..." format.
-      bundle_regex = /[a-zA-Z0-9]+(\.[a-zA-Z0-9])+/
+      bundle_regex = /[-a-zA-Z0-9]+(\.[-a-zA-Z0-9])+/
       (!bundle_id || bundle_id.match(bundle_regex))
     end
 
