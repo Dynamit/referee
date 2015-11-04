@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 ## [Unreleased][unreleased]
 Coming soon.
 
+## [0.2.1] - 2015-11-04
+### Added
+- Immediate rollout bug fix for typo in Swift language `UIViewController` implementation.
+
 ## [0.2.0] - 2015-11-04
 ### Added
 - Ensures Gemspec has a minimum Ruby version. Choosing 2.x, as this is default on Yosemite machines.
