@@ -21,6 +21,7 @@ Coming soon.
 ## [0.1.1] - 2015-09-02
 Initial public release.
 
-[unreleased]: https://github.com/dynamit/referee/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/dynamit/referee/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/Dynamit/referee/tree/v0.2.1
 [0.2.0]: https://github.com/Dynamit/referee/tree/v0.2.0
 [0.1.1]: https://github.com/Dynamit/referee/tree/0.1.1
