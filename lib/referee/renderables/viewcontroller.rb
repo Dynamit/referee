@@ -24,7 +24,7 @@ module Referee
 
     def swift_implementation
       bundle = swift_bundle_accessor(@config.bundle_id)
-      body = "UIStoryboard(name: \"#{@name}\", bundle: #{bundle})." \
+      body = "UIStoryboard(name: \"#{@storyboard}\", bundle: #{bundle})." \
              "instantiateViewControllerWithIdentifier(\"#{@name}\")"
       simple_swift_method @name, body
     end
