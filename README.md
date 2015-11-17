@@ -52,13 +52,13 @@ As a reminder, if you are using [rbenv](https://github.com/sstephenson/rbenv) to
 
 Note that Xcode does not use your standard user `$PATH`, so we'll need to place `referee` in a standard place that we can reference in our build scripts. `/usr/local/bin/` is a good place for this executable:
 
-    $ ln -s $(which referee) /usr/local/bin/referee
+    $ ln -sf $(which referee) /usr/local/bin/referee
 
 Or if you'd rather do the above manually, here is an example using `rbenv`:
 
     $ which referee
     /Users/colindrake/.rbenv/shims/referee
-    $ ln -s /Users/colindrake/.rbenv/shims/referee /usr/local/bin/referee
+    $ ln -sf /Users/colindrake/.rbenv/shims/referee /usr/local/bin/referee
 
 Finally, if you are using a `Gemfile` to manage Ruby dependencies for your app or build system, make sure to add the following:
 
