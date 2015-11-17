@@ -83,8 +83,9 @@ module Referee
     end
 
     def segues(xml)
-      segues = xml.css('segue')
-      segues.map { |n| n['identifier'] }.compact.uniq
+      segues = xml.css('segue').map { |n| n['identifier'] }
+      segues.delete_if {|item| item == nil || item.strip.empty? }
+      return segues.uniq
     end
 
     def build_output
