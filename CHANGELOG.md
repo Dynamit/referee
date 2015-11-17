@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 ## [Unreleased][unreleased]
 Coming soon.
 
+## [0.2.2] - 2015-11-17
+### Fixed
+- Edge case fix: Invalid segue names such as " " no longer cause syntax errors.
+- Fix for multiple segues in Swift language template ([#1](https://github.com/Dynamit/referee/issues/1)).
+
 ## [0.2.1] - 2015-11-04
 ### Added
 - Immediate rollout bug fix for typo in Swift language `UIViewController` implementation.
@@ -21,7 +26,8 @@ Coming soon.
 ## [0.1.1] - 2015-09-02
 Initial public release.
 
-[unreleased]: https://github.com/dynamit/referee/compare/v0.2.1...HEAD
+[unreleased]: https://github.com/dynamit/referee/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/Dynamit/referee/tree/v0.2.2
 [0.2.1]: https://github.com/Dynamit/referee/tree/v0.2.1
 [0.2.0]: https://github.com/Dynamit/referee/tree/v0.2.0
 [0.1.1]: https://github.com/Dynamit/referee/tree/0.1.1
