@@ -34,10 +34,10 @@ struct Resources {
         {{/ view_controllers }}
     }
 
-    {{# segues #}}
     /// Segue accessors.
     enum Segues: String {
+        {{# segues #}}
         {{{ swift_implementation }}}
+        {{/ segues }}
     }
-    {{/ segues }}
 }
