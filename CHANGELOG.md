@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and this file attempts to follow the guidelines provided by [Keep a CHANGELOG](http://keepachangelog.com/).
 
-## [Unreleased][unreleased]
+## [0.2.3] - 2015-11-19
 ### Fixed
 - Ensures there are no empty `enum`s for Swift language when any cell, etc. types are missing.
 
@@ -27,7 +27,8 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 ## [0.1.1] - 2015-09-02
 Initial public release.
 
-[unreleased]: https://github.com/dynamit/referee/compare/v0.2.2...HEAD
+[unreleased]: https://github.com/dynamit/referee/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/Dynamit/referee/tree/v0.2.3
 [0.2.2]: https://github.com/Dynamit/referee/tree/v0.2.2
 [0.2.1]: https://github.com/Dynamit/referee/tree/v0.2.1
 [0.2.0]: https://github.com/Dynamit/referee/tree/v0.2.0
