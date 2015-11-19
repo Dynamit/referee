@@ -15,18 +15,22 @@ struct Resources {
     }
 
     /// UITableViewCell identifier accessors.
+    {{# has_table_cells #}}
     enum TableViewCells: String {
         {{# table_cells #}}
         {{{ swift_implementation }}}
         {{/ table_cells }}
     }
+    {{/ has_table_cells }}
 
     /// UICollectionViewCell identifier accessors.
+    {{# has_collection_cells }}
     enum CollectionViewCells: String {
         {{# collection_cells #}}
         {{{ swift_implementation }}}
         {{/ collection_cells }}
     }
+    {{/ has_collection_cells }}
 
     /// UIViewController accessors.
     struct _ViewControllers {
@@ -36,9 +40,11 @@ struct Resources {
     }
 
     /// Segue accessors.
+    {{# has_segues }}
     enum Segues: String {
         {{# segues #}}
         {{{ swift_implementation }}}
         {{/ segues }}
     }
+    {{/ has_segues }}
 }

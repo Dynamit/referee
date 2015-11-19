@@ -64,6 +64,11 @@ module Referee
         dict[:segues] += group.segues
       end
 
+      # Build up flags.
+      dict[:has_table_cells] = (dict[:table_cells].count > 0)
+      dict[:has_collection_cells] = (dict[:collection_cells].count > 0)
+      dict[:has_segues] = (dict[:segues].count > 0)
+
       dict
     end
 
