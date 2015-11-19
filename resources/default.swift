@@ -14,18 +14,19 @@ struct Resources {
         {{/ storyboards }}
     }
 
-    {{# table_cells #}}
     /// UITableViewCell identifier accessors.
     enum TableViewCells: String {
+        {{# table_cells #}}
         {{{ swift_implementation }}}
+        {{/ table_cells }}
     }
-    {{/ table_cells }}
 
-    {{# collection_cells #}}
+    /// UICollectionViewCell identifier accessors.
     enum CollectionViewCells: String {
+        {{# collection_cells #}}
         {{{ swift_implementation }}}
+        {{/ collection_cells }}
     }
-    {{/ collection_cells }}
 
     /// UIViewController accessors.
     struct _ViewControllers {
