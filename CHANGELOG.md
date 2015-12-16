@@ -3,7 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and this file attempts to follow the guidelines provided by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
-Forthcoming.
+### Added
+- Cell and Segue identifiers are now `CustomStringConvertible`.
 
 ## [0.2.3] - 2015-11-19
 ### Fixed

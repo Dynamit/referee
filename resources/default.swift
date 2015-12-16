@@ -16,19 +16,21 @@ struct Resources {
 
     /// UITableViewCell identifier accessors.
     {{# has_table_cells #}}
-    enum TableViewCells: String {
+    enum TableViewCells: String, CustomStringConvertible {
         {{# table_cells #}}
         {{{ swift_implementation }}}
         {{/ table_cells }}
+        var description: String { return rawValue }
     }
     {{/ has_table_cells }}
 
     /// UICollectionViewCell identifier accessors.
     {{# has_collection_cells }}
-    enum CollectionViewCells: String {
+    enum CollectionViewCells: String, CustomStringConvertible {
         {{# collection_cells #}}
         {{{ swift_implementation }}}
         {{/ collection_cells }}
+        var description: String { return rawValue }
     }
     {{/ has_collection_cells }}
 
@@ -41,10 +43,11 @@ struct Resources {
 
     /// Segue accessors.
     {{# has_segues }}
-    enum Segues: String {
+    enum Segues: String, CustomStringConvertible {
         {{# segues #}}
         {{{ swift_implementation }}}
         {{/ segues }}
+        var description: String { return rawValue }
     }
     {{/ has_segues }}
 }
