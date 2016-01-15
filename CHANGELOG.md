@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and this file attempts to follow the guidelines provided by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+Forthcoming.
+
+## [0.2.4] - 2016-01-15
 ### Added
 - Cell and Segue identifiers are now `CustomStringConvertible`.
 
@@ -31,7 +34,8 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 ## [0.1.1] - 2015-09-02
 Initial public release.
 
-[unreleased]: https://github.com/dynamit/referee/compare/v0.2.3...HEAD
+[unreleased]: https://github.com/dynamit/referee/compare/v0.2.4...HEAD
+[0.2.4]: https://github.com/Dynamit/referee/tree/v0.2.4
 [0.2.3]: https://github.com/Dynamit/referee/tree/v0.2.3
 [0.2.2]: https://github.com/Dynamit/referee/tree/v0.2.2
 [0.2.1]: https://github.com/Dynamit/referee/tree/v0.2.1

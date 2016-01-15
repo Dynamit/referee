@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    objc-referee (0.2.3)
+    objc-referee (0.2.4)
       mustache (~> 1.0, >= 1.0.2)
       nokogiri (~> 1.6, >= 1.6.6.2)
       xcodeproj (~> 0.20.1)
@@ -26,7 +26,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     mustache (1.0.2)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     parser (2.2.2.6)
       ast (>= 1.1, < 3.0)
