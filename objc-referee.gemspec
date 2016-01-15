@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Colin Drake']
   spec.email         = ['colin.f.drake@gmail.com']
 
-  spec.summary       = 'Resource file generator for Objective-C.'
-  spec.description   = 'Resource file generator for Objective-C. Parses Xcode projects and ' \
+  spec.summary       = 'Resource file generator for Objective-C and Swift.'
+  spec.description   = 'Resource file generator for Objective-C and Swift. Parses Xcode projects and ' \
                        'creates a .m/.h file of compile-time checked resources.'
   spec.homepage      = 'http://dynamit.com'
   spec.license       = 'MIT'
