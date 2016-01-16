@@ -79,7 +79,13 @@ module Referee
     def view_controllers(xml)
       selector = VIEW_CONTROLLER_TAGS.join(',')
       controllers = xml.css(selector)
-      controllers.map { |n| n['storyboardIdentifier'] }
+      controllers_list = controllers.map do |n|
+        identifier = n['storyboardIdentifier']
+        klass = n['customClass'] || 'UIViewController'
+        { identifier: identifier, class: klass }
+      end
+      controllers_list.delete_if { |c| c[:identifier].nil? || c[:identifier].strip.empty? }
+      controllers_list
     end
 
     def segues(xml)

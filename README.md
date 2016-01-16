@@ -20,14 +20,14 @@ Without `referee`, you can either maintain your own constants file in parallel w
 
 ```objc
 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-UIViewController *someViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"Some View Controller"];
+SomeViewController *someViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"Some View Controller"];
 [someViewController performSegue:@"Some Segue"];
 ```
 
 With `referee`, you can replace this with references to a few automatically generated classes:
 
 ```objc
-UIViewController *someViewController = TSTResources.viewControllers.SomeViewController;
+SomeViewController *someViewController = TSTResources.viewControllers.SomeViewController;
 [someViewController performSegue:TSTResources.segues.SomeSegue];
 ```
 

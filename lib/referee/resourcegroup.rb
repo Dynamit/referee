@@ -30,7 +30,11 @@ module Referee
     end
 
     def view_controllers
-      @view_controllers.map { |c| ViewController.new(c, storyboard_name, @config) }
+      @view_controllers.map do |c|
+        identifier = c[:identifier]
+        klass = c[:class]
+        ViewController.new(identifier, klass, storyboard_name, @config)
+      end
     end
 
     def segues
