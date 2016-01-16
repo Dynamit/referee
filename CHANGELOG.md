@@ -4,9 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 
 ## [Unreleased]
 ### Added
-- View controllers are now returned as the type they were defined in Interface Builder with [(#2)](https://github.com/Dynamit/referee/issues/2).
+- View controllers are now returned as the type they were defined to be in Interface Builder [(#2)](https://github.com/Dynamit/referee/issues/2).
   - This removes the `as! FooViewController`-type code that was required in the past.
-  - As an update, to remove Xcode build warnings, you'll want to remove these forced casts. Regardless, existing code should still compile without an _error_, at least.
+  - As an update, to remove Xcode build warnings, you'll want to remove these forced casts from your own code. Regardless, existing code should still compile without an _error_, at least.
 
 ## [0.2.4] - 2016-01-15
 ### Added
