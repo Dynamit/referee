@@ -13,6 +13,20 @@ module Referee
                               avPlayerViewController
                               tabBarController)
 
+    DEFAULT_VIEW_CONTROLLER_TYPES = [
+      'UIViewController',
+      'UITableViewController',
+      'UINavigationController',
+      'GLKViewController',
+      'UIPageViewController',
+      'UICollectionViewController',
+      'UISplitViewController',
+      'AVPlayerViewController',
+      'UITabBarController'
+    ]
+
+    VIEW_CONTROLLER_TYPE_MAP = Hash[VIEW_CONTROLLER_TAGS.zip(DEFAULT_VIEW_CONTROLLER_TYPES)]
+
     attr_accessor :config, :resources
 
     # Instantiate a new `Project` instance given a `Configuration`.
@@ -55,6 +69,11 @@ module Referee
 
     private
 
+    # Converts a node into the.
+    def default_view_controller_for_tag_name(name)
+
+    end
+
     # Search project for files matching the known storyboard type.
     def find_storyboards
       all_files = files
@@ -80,8 +99,9 @@ module Referee
       selector = VIEW_CONTROLLER_TAGS.join(',')
       controllers = xml.css(selector)
       controllers_list = controllers.map do |n|
+        tag_name = n.name
         identifier = n['storyboardIdentifier']
-        klass = n['customClass'] || 'UIViewController'
+        klass = n['customClass'] || VIEW_CONTROLLER_TYPE_MAP[tag_name]
         { identifier: identifier, class: klass }
       end
       controllers_list.delete_if { |c| c[:identifier].nil? || c[:identifier].strip.empty? }
