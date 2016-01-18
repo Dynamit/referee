@@ -13,17 +13,17 @@ module Referee
                               avPlayerViewController
                               tabBarController)
 
-    DEFAULT_VIEW_CONTROLLER_TYPES = [
-      'UIViewController',
-      'UITableViewController',
-      'UINavigationController',
-      'GLKViewController',
-      'UIPageViewController',
-      'UICollectionViewController',
-      'UISplitViewController',
-      'AVPlayerViewController',
-      'UITabBarController'
-    ]
+    DEFAULT_VIEW_CONTROLLER_TYPES = %w(
+      UIViewController
+      UITableViewController
+      UINavigationController
+      GLKViewController
+      UIPageViewController
+      UICollectionViewController
+      UISplitViewController
+      AVPlayerViewController
+      UITabBarController
+    )
 
     VIEW_CONTROLLER_TYPE_MAP = Hash[VIEW_CONTROLLER_TAGS.zip(DEFAULT_VIEW_CONTROLLER_TYPES)]
 
@@ -68,11 +68,6 @@ module Referee
     end
 
     private
-
-    # Converts a node into the.
-    def default_view_controller_for_tag_name(name)
-
-    end
 
     # Search project for files matching the known storyboard type.
     def find_storyboards
