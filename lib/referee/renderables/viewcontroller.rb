@@ -29,11 +29,11 @@ module Referee
       if @swift_type == 'UIViewController'
         cast = ''
       else
-        cast = "as! #{@swift_type}"
+        cast = " as! #{@swift_type}"
       end
 
       body = "UIStoryboard(name: \"#{@storyboard}\", bundle: #{bundle})." \
-             "instantiateViewControllerWithIdentifier(\"#{@name}\") #{cast}"
+             "instantiateViewControllerWithIdentifier(\"#{@name}\")#{cast}"
       simple_swift_method @name, body
     end
   end
