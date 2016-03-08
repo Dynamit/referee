@@ -10,4 +10,4 @@ before_install:
   - sudo gem install bundler
 script:
   - bundle exec rspec
-  - bundle exec rubocop
+  - bundle exec rubocop lib exe objc-referee.gemspec spec
