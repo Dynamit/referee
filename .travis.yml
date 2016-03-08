@@ -1,14 +1,11 @@
-sudo: false
-cache: bundler
+os:
+  - osx
 language: ruby
+cache: bundler
 rvm:
-  - 2.0
-  - 2.1
-  - 2.2
-  - 2.3
-before_install: gem update --remote bundler
-install:
-  - bundle install --retry=3
+  - 2.0.0
+  - 2.1.2
+  - 2.1.3
 script:
   - bundle exec rspec
-  - bundle exec rubocop
+  - bundle exec rubocop lib exe objc-referee.gemspec spec
