@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and this file attempts to follow the guidelines provided by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
+TODO
+
+## [0.3.0] - 2016-03-08
 ### Added
 - View controllers are now returned as the type they were defined to be in Interface Builder [(#2)](https://github.com/Dynamit/referee/issues/2).
   - This removes the `as! FooViewController`-type code that was required in the past.
@@ -38,7 +41,8 @@ This project adheres to [Semantic Versioning](http://semver.org/) and this file 
 ## [0.1.1] - 2015-09-02
 Initial public release.
 
-[unreleased]: https://github.com/dynamit/referee/compare/v0.2.4...HEAD
+[unreleased]: https://github.com/dynamit/referee/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/Dynamit/referee/tree/v0.3.0
 [0.2.4]: https://github.com/Dynamit/referee/tree/v0.2.4
 [0.2.3]: https://github.com/Dynamit/referee/tree/v0.2.3
 [0.2.2]: https://github.com/Dynamit/referee/tree/v0.2.2
