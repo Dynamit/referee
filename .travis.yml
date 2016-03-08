@@ -1,6 +1,8 @@
 sudo: false
 cache: bundler
 language: ruby
+os:
+  - osx
 rvm:
   - 2.0
   - 2.1
