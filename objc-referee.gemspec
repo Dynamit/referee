@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-expectations', '~> 3.4'
   spec.add_development_dependency 'rspec-mocks', '~> 3.4'
 
-  spec.add_runtime_dependency 'xcodeproj', '~> 0.20.1'
-  spec.add_runtime_dependency 'mustache', '~> 1.0', '>= 1.0.2'
-  spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
+  spec.add_dependency 'xcodeproj', '~> 0.20.1'
+  spec.add_dependency 'mustache', '~> 1.0', '>= 1.0.2'
+  spec.add_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
 end
