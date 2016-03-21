@@ -3,7 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and this file attempts to follow the guidelines provided by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
-TODO
+### Changed
+- View controller accessors are now prefixed with `new`
 
 ## [0.3.0] - 2016-03-08
 ### Added
