@@ -51,3 +51,16 @@ struct Resources {
     }
     {{/ has_segues }}
 }
+
+
+{{# has_table_cells #}}
+extension UITableView {
+    func dequeueReusableCellWithIdentifier(_ identifier: Resources.TableViewCells, forIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return dequeueReusableCellWithIdentifier(identifier.description, forIndexPath: indexPath)
+    }
+
+    func dequeueReusableCellWithIdentifier(_ identifier: Resources.TableViewCells) -> UITableViewCell? {
+        return dequeueReusableCellWithIdentifier(identifier.description)
+    }
+}
+{{/ has_table_cells }}
