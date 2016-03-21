@@ -3,7 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and this file attempts to follow the guidelines provided by [Keep a CHANGELOG](http://keepachangelog.com/).
 
 ## [Unreleased]
-TODO
+TODO.
+
+## [1.0.0] - 2016-03-21
+### Changed
+- **Breaking change:** View controller accessors are now prefixed with `new`.
 
 ## [0.3.0] - 2016-03-08
 ### Added
@@ -41,7 +45,8 @@ TODO
 ## [0.1.1] - 2015-09-02
 Initial public release.
 
-[unreleased]: https://github.com/dynamit/referee/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/dynamit/referee/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Dynamit/referee/tree/v1.0.0
 [0.3.0]: https://github.com/Dynamit/referee/tree/v0.3.0
 [0.2.4]: https://github.com/Dynamit/referee/tree/v0.2.4
 [0.2.3]: https://github.com/Dynamit/referee/tree/v0.2.3

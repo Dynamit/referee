@@ -35,27 +35,27 @@
 /** UIViewController accessors. */
 @implementation __TESTViewControllers
 
-- (UINavigationController *)NavigationController1
+- (UINavigationController *)newNavigationController1
 {
 	return (UINavigationController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"NavigationController1"];
 }
-- (DetailViewController *)DetailViewController
+- (DetailViewController *)newDetailViewController
 {
 	return (DetailViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"DetailViewController"];
 }
-- (UISplitViewController *)SplitViewController
+- (UISplitViewController *)newSplitViewController
 {
 	return (UISplitViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SplitViewController"];
 }
-- (UIViewController *)GenericController
+- (UIViewController *)newGenericController
 {
 	return (UIViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GenericController"];
 }
-- (MasterViewController *)MasterViewController
+- (MasterViewController *)newMasterViewController
 {
 	return (MasterViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MasterViewController"];
 }
-- (UINavigationController *)NavigationController2
+- (UINavigationController *)newNavigationController2
 {
 	return (UINavigationController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"NavigationController2"];
 }

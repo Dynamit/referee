@@ -27,22 +27,22 @@ struct Resources {
 
     /// UIViewController accessors.
     struct _ViewControllers {
-        func NavigationController1() -> UINavigationController {
+        func newNavigationController1() -> UINavigationController {
 			return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("NavigationController1") as! UINavigationController
 		}
-        func DetailViewController() -> DetailViewController {
+        func newDetailViewController() -> DetailViewController {
 			return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
 		}
-        func SplitViewController() -> UISplitViewController {
+        func newSplitViewController() -> UISplitViewController {
 			return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SplitViewController") as! UISplitViewController
 		}
-        func GenericController() -> UIViewController {
+        func newGenericController() -> UIViewController {
 			return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("GenericController")
 		}
-        func MasterViewController() -> MasterViewController {
+        func newMasterViewController() -> MasterViewController {
 			return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("MasterViewController") as! MasterViewController
 		}
-        func NavigationController2() -> UINavigationController {
+        func newNavigationController2() -> UINavigationController {
 			return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("NavigationController2") as! UINavigationController
 		}
     }

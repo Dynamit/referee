@@ -12,15 +12,19 @@ module Referee
       @config = config
     end
 
+    def method_name
+      "new#{@name}"
+    end
+
     def declaration
-      simple_method_declaration @name
+      simple_method_declaration method_name
     end
 
     def implementation
       bundle = bundle_accessor(@config.bundle_id)
       body = "(#{@type})[[UIStoryboard storyboardWithName:@\"#{@storyboard}\" bundle:#{bundle}] " \
              "instantiateViewControllerWithIdentifier:@\"#{@name}\"]"
-      simple_method_implementation @name, body
+      simple_method_implementation method_name, body
     end
 
     def swift_implementation
@@ -34,7 +38,7 @@ module Referee
 
       body = "UIStoryboard(name: \"#{@storyboard}\", bundle: #{bundle})." \
              "instantiateViewControllerWithIdentifier(\"#{@name}\")#{cast}"
-      simple_swift_method @name, body
+      simple_swift_method method_name, body
     end
   end
 end

@@ -25,12 +25,12 @@
 
 @interface __TESTViewControllers : NSObject
 
-- (UINavigationController *)NavigationController1;
-- (DetailViewController *)DetailViewController;
-- (UISplitViewController *)SplitViewController;
-- (UIViewController *)GenericController;
-- (MasterViewController *)MasterViewController;
-- (UINavigationController *)NavigationController2;
+- (UINavigationController *)newNavigationController1;
+- (DetailViewController *)newDetailViewController;
+- (UISplitViewController *)newSplitViewController;
+- (UIViewController *)newGenericController;
+- (MasterViewController *)newMasterViewController;
+- (UINavigationController *)newNavigationController2;
 
 @end
 
