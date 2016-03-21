@@ -53,3 +53,13 @@ struct Resources {
         var description: String { return rawValue }
     }
 }
+
+extension UITableView {
+    func dequeueReusableCellWithIdentifier(_ identifier: Resources.TableViewCells, forIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return dequeueReusableCellWithIdentifier(identifier.description, forIndexPath: indexPath)
+    }
+
+    func dequeueReusableCellWithIdentifier(_ identifier: Resources.TableViewCells) -> UITableViewCell? {
+        return dequeueReusableCellWithIdentifier(identifier.description)
+    }
+}

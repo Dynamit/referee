@@ -52,7 +52,6 @@ struct Resources {
     {{/ has_segues }}
 }
 
-
 {{# has_table_cells #}}
 extension UITableView {
     func dequeueReusableCellWithIdentifier(_ identifier: Resources.TableViewCells, forIndexPath indexPath: NSIndexPath) -> UITableViewCell {
