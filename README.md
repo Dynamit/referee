@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/Dynamit/referee.svg?branch=master)](https://travis-ci.org/Dynamit/referee) [![Gem Version](https://badge.fury.io/rb/objc-referee.svg)](http://badge.fury.io/rb/objc-referee)
 
+# Deprecated
+
+As of *2017-01-01* this project is deprecated. It does not work with newer versions of Swift and we (Dynamit) will not support it.
+
 Referee is a script that generates Objective-C or Swift objects for easily referencing your resources in code, providing IDE auto-complete and compile-time safety for your app.
 
 The currently supported resource types are:
