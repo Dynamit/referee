@@ -53,6 +53,7 @@ module Referee
                table_cells: [],
                collection_cells: [],
                view_controllers: [],
+               view_controllers_imports: [],
                segues: [],
                prefix: @config.prefix }
 
@@ -61,6 +62,7 @@ module Referee
         dict[:table_cells] += group.table_cells
         dict[:collection_cells] += group.collection_cells
         dict[:view_controllers] += group.view_controllers
+        dict[:view_controllers_imports] += group.view_controllers_imports
         dict[:segues] += group.segues
       end
 

@@ -11,7 +11,8 @@ module Referee
     end
 
     def declaration
-      simple_method_declaration @name
+      clean_name = @name.tap { |e| e[0] = e[0].downcase }
+      simple_method_declaration clean_name
     end
 
     def implementation

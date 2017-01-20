@@ -9,3 +9,4 @@
 /bin/*
 !/bin/console
 !/bin/setup
+*.gem
