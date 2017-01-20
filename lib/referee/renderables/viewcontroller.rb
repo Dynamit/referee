@@ -13,7 +13,7 @@ module Referee
     end
 
     def method_name
-      "new#{@name}"
+      "#{@name}"
     end
 
     def declaration

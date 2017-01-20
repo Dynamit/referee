@@ -2,6 +2,11 @@
 
 @import UIKit;
 
+// Forward declarations
+{{# view_controllers_imports #}}
+{{{ declaration }}}
+{{/ view_controllers_imports }}
+
 /** ATTENTION: Use this macro to access resources. */
 #define {{ prefix }}Resources ([__{{ prefix }}Resources sharedInstance])
 

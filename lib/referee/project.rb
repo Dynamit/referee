@@ -51,7 +51,7 @@ module Referee
         segues = segues(xml)
 
         # Add to resources collection
-        group = ResourceGroup.new(storyboard, table_cells, collection_cells, non_empty_view_controllers, segues, @config)
+        group = ResourceGroup.new(storyboard, table_cells, collection_cells, non_empty_view_controllers, non_empty_view_controllers, segues, @config)
         @resources << group
 
         # Check for missing view controller IDs in this storyboard.
